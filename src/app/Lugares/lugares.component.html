@@ -7,13 +7,15 @@
             <h2>Lugares cercanos</h2>
             <ul class="list-group">
                 <ng-container *ngFor="let lugar of lugares">
-                    <li class="list-group-item" *ngIf="lugar.active">{{lugar.nombre}}</li>
+                    <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action2:'edit',referer:'google'}">
+                        <li class="list-group-item" *ngIf="lugar.active">{{lugar.nombre}}</li>
+                    </a>
                 </ng-container>
             </ul>
             <hr>
             <ul class="list-group">
                 <ng-container *ngFor="let lugar of lugares; let i=index" [ngSwitch]="lugar.cercania">
-                    <a>
+                    <a routerLink="/detalle/{{lugar.id}}">
                         <li class="list-group-item" contar-clicks [ngStyle]="{color: (lugar.active) ? 'black':'gray'}" [ngClass]="{numero_par:(i+1)%2 !==0}" [resaltar]="lugar.plan">{{lugar.nombre}} -
                             <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Muy Cercano </span>
                             <span *ngSwitchCase="2" [ngStyle]="{color:'black'}">Cercano</span>

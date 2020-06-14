@@ -4,7 +4,8 @@ import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-lugares',
-  templateUrl: './lugares.component.html'
+  templateUrl: './lugares.component.html',
+  styleUrls: ['./lugares.component.css']
 })
 
 export class LugaresComponent implements OnInit {
@@ -14,10 +15,10 @@ export class LugaresComponent implements OnInit {
   coordinates: any;
 
   lugares: any = [
-    {plan:'pagado', cercania: 1, distancia: 1, active: true, nombre: 'Floreria la gardenia' },
-    {plan:'gratuito', cercania: 2, distancia: 20, active: true, nombre: 'Zapateria memo' },
-    {plan:'pagado', cercania: 3, distancia: 50, active: true, nombre: 'Donas la pasadita' },
-    {plan:'gratuito', cercania: 1, distancia: 5, active: false, nombre: 'Veterinaria Reino bigotes' },
+    {id:1,plan:'pagado', cercania: 1, distancia: 1, active: true, nombre: 'Floreria la gardenia' },
+    {id:2,plan:'gratuito', cercania: 2, distancia: 20, active: true, nombre: 'Zapateria memo' },
+    {id:3,plan:'pagado', cercania: 3, distancia: 50, active: true, nombre: 'Donas la pasadita' },
+    {id:4,plan:'gratuito', cercania: 1, distancia: 5, active: false, nombre: 'Veterinaria Reino bigotes' },
   ];
 
   ngOnInit() {
